@@ -36,8 +36,8 @@ const NavBar = () => {
                   src={user.imageUrl}
                   alt="Profile Picture"
                   width={40}
-                  height={40}
-                  className="rounded-full"
+                  height={40} 
+                  className="rounded-full" unoptimized
                 />
               </Link>
             ) : (
@@ -49,7 +49,26 @@ const NavBar = () => {
               </button>
             </SignOutButton>
           </SignedIn>
-          <SignedOut></SignedOut>
+          <SignedOut>
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-emerald-500 transition-colors"
+            >
+             Home
+            </Link>
+            <Link
+              href={isSignedIn ? "/subscribe" : "/sign-up"}
+              className="text-gray-700 hover:text-emerald-500 transition-colors"
+            >
+             Subscribe
+            </Link>
+            <Link
+              href="/sign-up"
+              className="px-4 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600 transition"
+            >
+             Sign Up
+            </Link>
+          </SignedOut>
         </div>
       </div>
     </nav>
